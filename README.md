@@ -13,6 +13,7 @@
 API будет доступно по адресу: http://localhost:8000/docs
 
 ## Пример файла переменных окружения (.env.example)
+   
    ```bash
 DB_USER=student
 DB_PASSWORD=change_me
