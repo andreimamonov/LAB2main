@@ -13,15 +13,14 @@
 API будет доступно по адресу: http://localhost:8000/docs
 
 ## Пример файла переменных окружения (.env.example)
-   
-   ```bash
-DB_USER=student
-DB_PASSWORD=change_me
-DB_NAME=wp_labs
-DB_HOST=postgres
-DB_PORT=5432
-PORT=8000
-
+      
+      DB_USER=student
+      DB_PASSWORD=change_me
+      DB_NAME=wp_labs
+      DB_HOST=postgres
+      DB_PORT=5432
+      PORT=8000
+      
 
 ## Описание API (список эндпоинтов и параметров пагинации)
 Эндпоинты:
@@ -46,16 +45,16 @@ limit (1–100, по умолч. 10) – записей на странице
 
 ## Пример запроса: 
 
-   ```bash
-/items/?page=2&limit=5
+      /items/?page=2&limit=5
 
 ## Пример ответа:
 
    ```json
-{
-  "data": [ /* массив объектов Item */ ],
-  "meta": { "total": 25, "page": 2, "limit": 5, "total_pages": 5 }
-}
+      {
+        "data": [ /* массив объектов Item */ ],
+        "meta": { "total": 25, "page": 2, "limit": 5, "total_pages": 5 }
+      }
+   ```
 ## Инструкция по запуску миграций
 Миграции применяются автоматически при запуске контейнера (через entrypoint.sh). Для ручного управления используйте команду:
 
