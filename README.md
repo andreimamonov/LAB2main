@@ -13,17 +13,14 @@
 API будет доступно по адресу: http://localhost:8000/docs
 
 ## Пример файла переменных окружения (.env.example)
-## Пример файла переменных окружения (`.env.example`)
-
-```ini
+   ```ini
 DB_USER=student
 DB_PASSWORD=change_me
 DB_NAME=wp_labs
 DB_HOST=postgres
 DB_PORT=5432
 PORT=8000
-
-#№ Описание API (список эндпоинтов и параметров пагинации)
+## Описание API (список эндпоинтов и параметров пагинации)
 Эндпоинты:
 
 GET /items/ – список с пагинацией
@@ -46,19 +43,18 @@ limit (1–100, по умолч. 10) – записей на странице
 
 ## Пример запроса: 
 
+   ```bash
 /items/?page=2&limit=5
 
 ## Пример ответа:
 
-json
+   ```json
 {
   "data": [ /* массив объектов Item */ ],
   "meta": { "total": 25, "page": 2, "limit": 5, "total_pages": 5 }
 }
 ## Инструкция по запуску миграций
-Миграции применяются автоматически при запуске контейнера (через entrypoint.sh). Для ручного управления используйте команды внутри контейнера:
+Миграции применяются автоматически при запуске контейнера (через entrypoint.sh). Для ручного управления используйте команду:
 
-bash
-docker exec -it wp_labs_app alembic upgrade head   # применить все миграции
-docker exec -it wp_labs_app alembic revision --autogenerate -m "описание"  # создать новую миграцию
-Файлы миграций лежат в migrations/versions/ и включены в репозиторий.
+   ```bash
+docker exec -it wp_labs_app alembic upgrade head
